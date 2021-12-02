@@ -2,14 +2,14 @@
 
 >This is a Ruby on Rails 5 APplication
 
-###Features
+### Features
 
 -Real time chat engine
 -BLog
 -Portfolio
 -Drag and Drop
 
-###Code Example
+### Code Example
 
 ```ruby
 def my_ruby_method
