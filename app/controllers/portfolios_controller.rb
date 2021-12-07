@@ -44,4 +44,19 @@ def show
 	@portfolio_item = Portfolio.find(params[:id])
 	end
 
+def destroy
+
+	#Perform the lookup
+	@portfolio_item = Portfolio.find(params[:id])
+
+	#destroy/delete the recode
+	@portfolio_item.destroy
+
+	#Will redirect to indexpage
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: "Portfolio item was successfully destroyed." }
+      format.json { head :no_content }
+    end
+end
+
 end
