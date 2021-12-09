@@ -1,6 +1,8 @@
 #portfolio model
 
 class Portfolio < ApplicationRecord  #this portfolio is been called in portfolio cotroller
+	include Placeholder
+
 	validates_presence_of :title, :body, :main_image, :thumb_image
 
 def self.angular        #alternate way to custom 
@@ -11,9 +13,7 @@ scope :ruby_on_rails_portfolio_items , ->{  where(subtitle:"Ruby on Rails")}    
 
  after_initialize :set_defaults
  def set_defaults   #will set defaults values
- 	self.main_image ||= "https://via.placeholder.com/600x400"
- 	self.thumb_image ||= "https://via.placeholder.com/350x150"
+ 	self.main_image ||= Placeholder.image_generator(height:'600', width:'400')
+ 	self.thumb_image ||= Placeholder.image_generator(height:'350', width:'150')
  end
-
-
 end
