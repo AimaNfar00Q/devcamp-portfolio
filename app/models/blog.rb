@@ -4,4 +4,7 @@ class Blog < ApplicationRecord
   friendly_id :title, use: :slugged
 
   validates_presence_of :title, :body  #VALIDATION ON TITTLE ND BODY TIT SHOULDNT BE NIL
+
+  
+  belongs_to :topic     #RELATIONSHIP
 end
