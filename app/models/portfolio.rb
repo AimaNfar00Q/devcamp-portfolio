@@ -2,7 +2,10 @@
 
 class Portfolio < ApplicationRecord  #this portfolio is been called in portfolio cotroller
 	has_many :technologies
-	
+	 
+	 accepts_nested_attributes_for :technologies,  #Nested attributes in model meanas angular ruby for technology vid 83
+	    reject_if: lambda { |attrs| attrs['name'].blank? }
+
 	include Placeholder
 
 	validates_presence_of :title, :body, :main_image, :thumb_image
