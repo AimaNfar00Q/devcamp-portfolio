@@ -4,10 +4,13 @@ class BlogsController < ApplicationController
   # GET /blogs or /blogs.json
   def index
     @blogs = Blog.all #showing us all the blog posts that have been created by user
+    @page_title= "My Portfol Blog"
   end
 
   # GET /blogs/1 or /blogs/1.json
   def show #here control will go to line 2 and set_blog method for show will be call which is getting the params id of post for which user'll pres show btn
+   @page_title = @blog.title
+   @seo_keywords = @blog.body 
   end
 
   # GET /blogs/new
