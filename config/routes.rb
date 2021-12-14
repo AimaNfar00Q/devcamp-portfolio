@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :portfolios, except: [:show]     #vid 66 customroute for show
     get 'portfolio/:id' , to: 'portfolios#show', as:'portfolio_show'
 
+    get 'angular_items' , to: 'portfolios#angular'  #path of custom scope angular
+
   #customizing the routes vid 65
   root to: 'pages#home'   #for home/main page
 
