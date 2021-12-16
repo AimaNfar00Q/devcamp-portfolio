@@ -5,7 +5,8 @@ layout "blog" #blog layout included
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.all #showing us all the blog posts that have been created by user
+  #byebug
+  @blogs = Blog.special_blogs #showing us all the blog posts that have been created by user
     @page_title= "My Portfol Blog"
   end
 

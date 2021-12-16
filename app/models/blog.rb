@@ -7,4 +7,9 @@ class Blog < ApplicationRecord
 
   
   belongs_to :topic, optional: true  #RELATIONSHIP
+
+  def self.special_blogs
+    all
+  end
+
 end
