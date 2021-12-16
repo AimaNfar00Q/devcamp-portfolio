@@ -17,15 +17,26 @@
   </head>
 
   <body>
-        <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
 
-     <%= render "shared/nav", localize:'top' %> <!-- calling partial from views-shared-nav -->
+  <div class="site-wrapper">
 
-     <%= login_helper %>   <!-- calling helper from app-helper-app-helper.rbbb -->
-    <%= yield %>
- 
-      <%= source_helper("application") %>
+    <div class="site-wrapper-inner">
+
+      <div class="cover-container">
+      
+           <p class="notice"><%= notice %></p>
+           <p class="alert"><%= alert %></p>
+
+           <%= render "shared/application_nav", localize:'top' %> <!-- calling partial from views-shared-nav -->
+           <%= login_helper %>   <!-- calling helper from app-helper-app-helper.rbbb -->
+           <%= yield %>
+           <%= source_helper("application") %>
+
+         </div>
+
+      </div>
+
+    </div>
 
   </body>
 </html>
