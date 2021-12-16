@@ -28,8 +28,15 @@
            <p class="alert"><%= alert %></p>
 
            <%= render "shared/application_nav", localize:'top' %> <!-- calling partial from views-shared-nav -->
-           <%= login_helper %>   <!-- calling helper from app-helper-app-helper.rbbb -->
+          
            <%= yield %>
+            
+        <div class="mastfoot">
+        <div class="inner">
+          <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </div>
+
            <%= source_helper("application") %>
 
          </div>
