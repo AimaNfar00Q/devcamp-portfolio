@@ -2,9 +2,11 @@
 
 class PortfoliosController < ApplicationController
 	layout "portfolio" #pfolio layout included
+
+	access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all #authorization
 	
 	def index
-	@portfolio_items = Portfolio.all#calling from portfolio model
+		@portfolio_items = Portfolio.all#calling from portfolio model
 	end
 
 	def angular
@@ -17,7 +19,7 @@ class PortfoliosController < ApplicationController
 	end
 
 	def create
-	@portfolio_item = Portfolio.new(portfolio_params) #getting the parameter of form title nd body
+		@portfolio_item = Portfolio.new(portfolio_params) #getting the parameter of form title nd body
 
     respond_to do |format|
       if @portfolio_item.save

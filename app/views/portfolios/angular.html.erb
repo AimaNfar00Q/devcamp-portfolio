@@ -2,7 +2,7 @@
 <h1>Angular Portfolio Items</h1> 
 
 
-<%= link_to "Create New Item" , new_portfolio_path %> 
+<%= link_to "Create New Item" , new_portfolio_path if logged_in?(:site_admin)  %> 
 <% @angular_portfolio_items.each do |portfolio_item|  %> <!-- portfolio _items is cmng from pfolio controller -->
 
  <p> <%= link_to portfolio_item.title , portfolio_show_path(portfolio_item) %> </p>  <!--for show ACTION portfolio_item is actually getting the id rails itself knows this -->
@@ -10,9 +10,9 @@
  <p> <%= portfolio_item.subtitle %> </p>
  <p> <%= portfolio_item.body %> </p>
  <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %> 
-  <%= link_to "Edit Portfolio Item" , edit_portfolio_path(portfolio_item)  %>
+  <%= link_to "Edit Portfolio Item" , edit_portfolio_path(portfolio_item) if logged_in?(:site_admin)  %>
 
-  <%= link_to 'Delete portfolio item', portfolio_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } %> 
+  <%= link_to 'Delete portfolio item', portfolio_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)  %> 
 
 
 
